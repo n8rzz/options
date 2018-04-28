@@ -1,6 +1,6 @@
 # ATRLatest
 
-```
+```java
 #
 # TD Ameritrade IP Company, Inc. (c) 2014-2018
 #
