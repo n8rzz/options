@@ -85,7 +85,7 @@ Percentile.AssignValueColor(if Percentile > HighVol then Color.GREEN else Color.
 ```
 
 # StochasticFullDoubleOver
-```
+```java
 #
 # TD Ameritrade IP Company, Inc. (c) 2008-2018
 #
@@ -172,7 +172,7 @@ DownSignal.SetPaintingStrategy(PaintingStrategy.ARROW_DOWN);
 ```
 
 # TVI
-```
+```java
 #
 # TD Ameritrade IP Company, Inc. (c) 2007-2018
 #
