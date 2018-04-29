@@ -1,10 +1,16 @@
-# ATRLatest
+# ThinkOrSwim Thinkscript repo
+
+Contained below are a few custom studies and personal customizations of existing ThinkOrSwim studies.
+
+## ATRLatest
+
+![atr-latest](/assets/atr-latest.png)
 
 ```java
 #
 # TD Ameritrade IP Company, Inc. (c) 2014-2018
 #
-# Uses basic most recent value from ATR study then 
+# Uses basic most recent value from ATR study then
 # displays value in a colorized label
 #
 # Modified by Nate Geslin (teamtomkins23@gmail.com)
@@ -20,18 +26,20 @@ def ATR = MovingAverage(averageType, TrueRange(high, close, low), length);
 def currentAtr = ATR[0];
 
 AddLabel(
-    1, 
-    "ATR (" + length + "): " + Astext(currentAtr, NumberFormat.TWO_DECIMAL_PLACES), 
+    1,
+    "ATR (" + length + "): " + Astext(currentAtr, NumberFormat.TWO_DECIMAL_PLACES),
     if currentAtr > (close * yellowThreshold) then color.YELLOW else if currentAtr > (close * greenThreshold) then color.GREEN else color.GRAY
 );
 ```
 
-# IVRankPercentileAndStdDeviation
+## IVRankPercentileAndStdDeviation
+
+![ivRankPercentileAndStdDeviation](/assets/ivRankPercentileAndStdDeviation.png)
 
 ```java
 # Plots colorized IVRank
-# Provdes labels for STD Deviations on Day, Week and Month 
-# 
+# Provdes labels for STD Deviations on Day, Week and Month
+#
 # script taken from:
 # http://iv-rank.blogspot.com/
 # https://www.youtube.com/watch?v=lkxVvyBMGkE
@@ -50,7 +58,7 @@ input DisplayWeekly1StandardDev = yes;
 input DisplayMonthly1StandardDev = yes;
 
 input TimePeriod = 252;
-# hint 
+# hint
 # - 21 = 1 month
 # - 42 = 2 months
 # - 63 = 3 months
@@ -84,13 +92,16 @@ LowVol.SetDefaultColor(GetColor(5));
 Percentile.AssignValueColor(if Percentile > HighVol then Color.GREEN else Color.RED);
 ```
 
-# StochasticFullDoubleOver
+## StochasticFullDoubleOver
+
+![stochasticFullDoubleOver](/assets/stochasticFullDoubleOver.png)
+
 ```java
 #
 # TD Ameritrade IP Company, Inc. (c) 2008-2018
 #
 # StochasticFullDoubleOver
-# 
+#
 # Provides standard StochasticFull with two additional overbought/oversold plots
 #
 # Modified by Nate Geslin (teamtomkins23@gmail.com)
@@ -149,7 +160,7 @@ case "On FullK & FullD":
     DownSignal = if downK or downD then OverBought else Double.NaN;
 case "Only Double Over":
     # if FullK crosses FullD and between PreOverSold and OverSold
-    # if FullK crosses FullD and between PreOverBought and OverBought 
+    # if FullK crosses FullD and between PreOverBought and OverBought
     UpSignal = double.NaN;
     DownSignal = double.NaN;
 }
@@ -172,6 +183,9 @@ DownSignal.SetPaintingStrategy(PaintingStrategy.ARROW_DOWN);
 ```
 
 # TVI
+
+![tvi](/assets/tvi.png)
+
 ```java
 #
 # TD Ameritrade IP Company, Inc. (c) 2007-2018
