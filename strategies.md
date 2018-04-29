@@ -27,7 +27,7 @@ High volatility means options are typically overpriced.  High volatility markets
 ### Bullish
 
 |strategy|IVRank|
-|---|---|---|---|
+|---|---|
 |short put|High|
 |put credit spread|High|
 |butterfly|High|
@@ -38,13 +38,13 @@ High volatility means options are typically overpriced.  High volatility markets
 ### Neutral
 
 |strategy|IVRank|
-|---|---|---|---|
+|---|---|
 |iron condor|High|
 
 ### Bearish
 
 |strategy|IVRank|
-|---|---|---|---|
+|---|---|
 |short call|High|
 |call credit spread|High|
 |butterfly|High|
