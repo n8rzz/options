@@ -4,7 +4,7 @@ Contained below are a few custom studies and personal customizations of existing
 
 ## ATRLatest
 
-![atr-latest](/assets/atr-latest.png)
+![atr-latest](/assets/images/atr-latest.png)
 
 ```java
 #
@@ -34,7 +34,7 @@ AddLabel(
 
 ## IVRankPercentileAndStdDeviation
 
-![ivRankPercentileAndStdDeviation](/assets/ivRankPercentileAndStdDeviation.png)
+![ivRankPercentileAndStdDeviation](/assets/images/ivRankPercentileAndStdDeviation.png)
 
 ```java
 # Plots colorized IVRank
@@ -94,7 +94,7 @@ Percentile.AssignValueColor(if Percentile > HighVol then Color.GREEN else Color.
 
 ## StochasticFullDoubleOver
 
-![stochasticFullDoubleOver](/assets/stochasticFullDoubleOver.png)
+![stochasticFullDoubleOver](/assets/images/stochasticFullDoubleOver.png)
 
 ```java
 #
@@ -184,7 +184,7 @@ DownSignal.SetPaintingStrategy(PaintingStrategy.ARROW_DOWN);
 
 # TVI
 
-![tvi](/assets/tvi.png)
+![tvi](/assets/images/tvi.png)
 
 ```java
 #
