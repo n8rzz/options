@@ -32,6 +32,29 @@ AddLabel(
 );
 ```
 
+## IVGlance
+![iv-glance](/assets/images/iv-glance.png)
+
+```java
+declare upper;
+declare hide_on_intraday;
+
+input period = AggregationPeriod.DAY ;
+#hint period: time period to use for aggregating implied volatility.
+input length = 252;
+#hint length: #bars to use in implied volatility calculation.
+
+def ivGapHi = if isnan(imp_volatility(period = period)) then 99999999999 else imp_volatility(period = period);
+def ivGapLo = if isnan(imp_volatility(period = period)) then -99999999999 else imp_volatility(period = period);
+def periodHigh = highest(ivGapLo, length = length);
+def periodLow = lowest(ivGapHi, length = length);
+def ivRange = periodHigh - periodLow ;
+def ivp = (imp_volatility(period = period) - periodLow) / ivRange;
+
+AddLabel(1, Concat(" IV: ", aspercent(imp_volatility)), if ivp < 0.25 then color.red else if ivp > 0.5 then color.green else color.yellow);
+AddLabel(1, Concat(" IVR: ", aspercent(ivp)), if ivp < 0.25 then color.red else if ivp > 0.5 then color.green else color.yellow);
+```
+
 ## IVRankPercentileAndStdDeviation
 
 ![ivRankPercentileAndStdDeviation](/assets/images/ivRankPercentileAndStdDeviation.png)
